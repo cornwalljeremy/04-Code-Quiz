@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My First Object</title>
+  </head>
+  <body>
+    <h1>Open the console to see the magic!</h1>
+    <div id="box"></div>
+
+    <script>
+      var garage = [
+        {
+          make: "Honda",
+          model: "Fit",
+          color: "Blue Raspberry",
+          mileage: 3000,
+          isWorking: true,
+          passengers: ["me", "you", "whatever"],
+        },
+        {
+          make: "Ford",
+          model: "Focus",
+          color: "Blue Raspberry",
+          mileage: 3000,
+          isWorking: false,
+          passengers: ["ned", "ed", "ted"],
+        },
+      ];
+
+      var colors = ["blue", "green"];
+
+      // console.log(garage[0].passengers[1]);
+      // console.log(garage[1].make);
+
+      // for (var i = 0; i < garage.length; i++) {
+      //   console.log(garage[i].make);
+      // }
+
+      var boxEl = document.querySelector("#box");
+
+      var index = 0;
+
+      function showMake() {
+        //in quiz
+        var h1 = document.createElement("h1");
+        var make = garage[index].make;
+        h1.textContent = make;
+        boxEl.appendChild(h1);
+        for (var i = 0; i < garage[index].passengers.length; i++) {
+          var button = document.createElement("button");
+          //add event listener
+          button.addEventListener("click", doSomething);
+
+          button.textContent = garage[index].passengers[i];
+          boxEl.append(button);
+        }
+
+        console.log(garage[index].make);
+      }
+
+      function doSomething() {
+        //do something
+      }
+
+      showMake();
+
+      //inside a click listener
+      index++;
+      showMake();
+
+      // var car = {
+      //   make: "Honda",
+      //   model: "Fit",
+      //   color: "Blue Raspberry",
+      //   mileage: 3000,
+      //   isWorking: true,
+      // }
+
+      // car2.make
+
+      // var car2 = {
+      //   make: "Ford",
+      //   model: "Focus",
+      //   color: "Blue Raspberry",
+      //   mileage: 3000,
+      //   isWorking: false,
+      // }
+    </script>
+  </body>
+</html>
