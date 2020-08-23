@@ -3,26 +3,32 @@
   box-sizing: border-box;
   padding: 0;
 }
+
 body {
   height: 100vh;
-  display: flex; 
+  display: flex;
   background-color: lightskyblue;
   transition: background 0.5s ease;
   position: relative;
 }
 
-.welcome {
-    margin: 0 auto;
-    padding-top: 25%;
+.counter-message {
+  position: absolute;
+  margin: 10px;
+  padding-left: 50%;
+  padding-top: 25%;
+  transform: translate(-10%, 1%);
 }
 
-/* .start {
-  top: 50%;
+.format {
+  position: absolute;
+  top: 30%;
   left: 50%;
-} */
-.field-name,
-.field-button,
-.field-thanks {
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.name-input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,32 +42,29 @@ body {
   border-radius: 5px;
   transition: all 0.5s ease;
 }
-
-.field-name i,
-.field-button i,
-.field-thanks i {
+.name-input i {
   padding: 10px;
   cursor: pointer;
 }
-
-.field-name input,
-.field-button input,
-.field-thanks {
+.instructions {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  text-align: center;
+  color: maroon;
+}
+.name-input input {
   background: none;
   border: none;
   flex: 1;
   height: 100%;
   outline: none;
-}
-
-div.innactive {
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, 50%);
-}
-
-div.active {
-  opacity: 1;
-  pointer-events: all;
-  transform: translate(-50%, -50%);
 }
