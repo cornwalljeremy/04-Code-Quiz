@@ -6,7 +6,7 @@ let startQuestionsEl = document.getElementById("questions-start");
 let startInstructionsEl = document.getElementById("instructions");
 let hiddenItems = document.getElementsByClassName("hide");
 let questionList = document.getElementById("question-list");
-let rightAnswer = 0
+let rightAnswer = 0;
 
 function countdown() {
   let timeLeft = 500;
@@ -32,53 +32,45 @@ function displayMessage() {
 
 function quiz() {
   countdown();
-  
-//   hiddenItems.removeAttribute("hide");
-  startInstructionsEl.setAttribute("class", "hide")
+
+  //   hiddenItems.removeAttribute("hide");
+  startInstructionsEl.setAttribute("class", "hide");
   startScreenEl.removeAttribute("class");
   startScreenEl.setAttribute("class", "show");
 
   startScreenEl.innerHTML = "<br>";
   startScreenEl.innerHTML += questionsArray[0].q;
 
-  button.textContent = questionsArray[0].answers[i];
-  questionList.appendChild(button);   
-}
- 
-  
-function displayQuestion(){
-  for(var i = 0;i < questionsArray[0].answers.length; i++){
+  function displayQuestion() {}
+  for (var i = 0; i < questionsArray[0].answers.length; i++) {
     var button = document.createElement("button");
-    button.setAttribute("id", i)
-    button.addEventListener("click", function(event){
-     
-      if(event.target.id === questionsArray[0].correctAnswer) {
-          rightAnswer = rightAnswer + 1
+    button.setAttribute("id", i);
+    button.addEventListener("click", function (event) {
+      if (event.target.id === questionsArray[0].correctAnswer) {
+        rightAnswer = rightAnswer + 1;
       } else {
-         
+        rightAnswer = rightAnswer - 1;
+        console.log(rightAnswer)
+        return displayQuestion;
       }
-      return displayQuestion()
-    })
-    
-    
+    });
+    button.textContent = questionsArray[0].answers[i];
+    questionList.appendChild(button);
+
   }
-}
-  
-  // button.textContent = questionsArray[0].answers[i];
-  // questionList.appendChild(button); 
-  
-  let output = [];
-  let answers;
+
+  // let output = [];
+  // let answers;
   // questionsArray.textContent = [count].length;
   // i++;
-//   for (i = 0; i < questionsArray.length; i++) let A = displayMessage(questionsArray[i].q);
+  //   for (i = 0; i < questionsArray.length; i++) let A = displayMessage(questionsArray[i].q);
   //    if(
   //     (A === "a" && questions[i].correctAnswer === "a") ||
   //     (A === "b" && questions[i].correctAnswer === "b") ||
   //     (A === "c" && questions[i].correctAnswer === "c") ||
   //     (A === "d" && questions[i].correctAnswer === "d") ||
   //     )
-
+}
 
 // score++
 // alert('correct');
@@ -108,12 +100,7 @@ let count = 0;
 let questionsArray = [
   {
     q: "How long have we been in this class?",
-    answers: [
-       "I don't remember!",
-      "four weeks",
-       "eternity",
-       "yes",
-    ],
+    answers: ["I don't remember!", "four weeks", "eternity", "yes"],
     correctAnswer: "1",
   },
   {
