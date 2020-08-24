@@ -1,9 +1,15 @@
 let timerEl = document.getElementById("countdown");
 let mainEl = document.getElementById("main");
 let startBtn = document.getElementById("start", "quiz");
+let startScreenEl = document.getElementById("start");
+let startQuestionsEl = document.getElementById("questions-start");
+let startInstructionsEl = document.getElementById("instructions");
+let hiddenItems = document.getElementsByClassName("hide");
+let questionList = document.getElementById("question-list");
+
 
 function countdown() {
-  let timeLeft = 3;
+  let timeLeft = 300;
   let timeInterval = setInterval(function () {
     if (timeLeft > 0) {
       timerEl.textContent = timeLeft;
@@ -24,33 +30,33 @@ function displayMessage() {
   //   if(timeLeft < 0)
 }
 
-// function startQuiz() {
-//   // hide start screen
-//   var startScreenEl = document.getElementById("start-screen");
-//   startScreenEl.setAttribute("class", "hide");
-//   // un-hide questions section
-//   questionsEl.removeAttribute("name-input");
-//   // start timer
-//   timerId = setInterval(clockTick, 1000);
-//   // // show starting time
-//   timerEl.textContent = time;
-//   getQuestion();
-// }
+
 
 function quiz() {
   countdown();
-  var startScreenEl = document.getElementById("start-screen");
-  startScreenEl.removeAttribute('class');
+  
+//   hiddenItems.removeAttribute("hide");
+  startInstructionsEl.setAttribute("class", "hide")
+  startScreenEl.removeAttribute("class");
   startScreenEl.setAttribute("class", "show");
-//   questionsEl.removeAttribute("welcome");
-  startScreenEl.innerHTML = "the quiz has started <br>";
+
+  startScreenEl.innerHTML = "<br>";
   startScreenEl.innerHTML += questionsArray[0].q;
-  startScreenEl.innerHTML += questionsArray[0].answers.a; 
-  var output = [];
-  var answers;
-  displayQuestion.textContent = questions[count].length;
+  
+  // assuming first question
+  for(var i = 0;i < questionsArray[0].answers.length; i++){
+    var button = document.createElement("button");
+    button.textContent = questionsArray[0].answers[i];
+    questionList.appendChild(button);
+  }
+  
+
+  
+  let output = [];
+  let answers;
+  questionsArray.textContent = [count].length;
   i++;
-  for (i = 0; i < questions.length; i++) var A = window.prompt(questions[i].q);
+//   for (i = 0; i < questionsArray.length; i++) let A = displayMessage(questionsArray[i].q);
   //    if(
   //     (A === "a" && questions[i].correctAnswer === "a") ||
   //     (A === "b" && questions[i].correctAnswer === "b") ||
@@ -67,7 +73,7 @@ function quiz() {
 // }
 
 // function sendScore({
-//     var scoreInitials = document.getElementById('initialEl')
+//     let scoreInitials = document.getElementById('initialEl')
 // })
 
 // function highScore(highScores) {
@@ -75,7 +81,7 @@ function quiz() {
 
 //     displayQuestion.innerHTML = "<ul></ul>";
 //     displayQuestion.className = "score-item";
-//     for(var i = 0; i < highScores.length; i++){
+//     for(let i = 0; i < highScores.length; i++){
 //         displayQuestion.appendChild = document.createElement('li');
 //     }
 // }
@@ -87,13 +93,13 @@ let count = 0;
 let questionsArray = [
   {
     q: "How long have we been in this class?",
-    answers: {
-      a: "I don't remember!",
-      b: "four weeks",
-      c: "eternity",
-      d: "yes",
-    },
-    correctAnswer: "b",
+    answers: [
+       "I don't remember!",
+      "four weeks",
+       "eternity",
+       "yes",
+    ],
+    correctAnswer: 1,
   },
   {
     q: "What is Java?",
@@ -136,7 +142,7 @@ let questionsArray = [
     correctAnswer: "c",
   },
 ];
-// for(var i=0; i < questionsArray[count].length; i++);
+// for(let i=0; i < questionsArray[count].length; i++);
 
 // function nextSlide(parent, nextForm) {
 //   parent.classList.add("hide");
