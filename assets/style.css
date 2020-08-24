@@ -26,7 +26,7 @@ body {
 button {
   background-color: maroon;
   color: white;
-  
+
   height: 50px;
   width: 300px;
   justify-content: space-between;
@@ -34,10 +34,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-button question-list {
+#question-list button {
   background-color: rgb(24, 24, 152);
   color: white;
-  
+
   height: 50px;
   width: 300px;
   justify-content: space-between;

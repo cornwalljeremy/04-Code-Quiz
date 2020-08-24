@@ -6,10 +6,10 @@ let startQuestionsEl = document.getElementById("questions-start");
 let startInstructionsEl = document.getElementById("instructions");
 let hiddenItems = document.getElementsByClassName("hide");
 let questionList = document.getElementById("question-list");
-
+let rightAnswer = 0
 
 function countdown() {
-  let timeLeft = 300;
+  let timeLeft = 500;
   let timeInterval = setInterval(function () {
     if (timeLeft > 0) {
       timerEl.textContent = timeLeft;
@@ -30,8 +30,6 @@ function displayMessage() {
   //   if(timeLeft < 0)
 }
 
-
-
 function quiz() {
   countdown();
   
@@ -42,20 +40,37 @@ function quiz() {
 
   startScreenEl.innerHTML = "<br>";
   startScreenEl.innerHTML += questionsArray[0].q;
+
+  button.textContent = questionsArray[0].answers[i];
+  questionList.appendChild(button);   
+}
+ 
   
-  // assuming first question
+function displayQuestion(){
   for(var i = 0;i < questionsArray[0].answers.length; i++){
     var button = document.createElement("button");
-    button.textContent = questionsArray[0].answers[i];
-    questionList.appendChild(button);
+    button.setAttribute("id", i)
+    button.addEventListener("click", function(event){
+     
+      if(event.target.id === questionsArray[0].correctAnswer) {
+          rightAnswer = rightAnswer + 1
+      } else {
+         
+      }
+      return displayQuestion()
+    })
+    
+    
   }
+}
   
-
+  // button.textContent = questionsArray[0].answers[i];
+  // questionList.appendChild(button); 
   
   let output = [];
   let answers;
-  questionsArray.textContent = [count].length;
-  i++;
+  // questionsArray.textContent = [count].length;
+  // i++;
 //   for (i = 0; i < questionsArray.length; i++) let A = displayMessage(questionsArray[i].q);
   //    if(
   //     (A === "a" && questions[i].correctAnswer === "a") ||
@@ -63,7 +78,7 @@ function quiz() {
   //     (A === "c" && questions[i].correctAnswer === "c") ||
   //     (A === "d" && questions[i].correctAnswer === "d") ||
   //     )
-}
+
 
 // score++
 // alert('correct');
@@ -99,7 +114,7 @@ let questionsArray = [
        "eternity",
        "yes",
     ],
-    correctAnswer: 1,
+    correctAnswer: "1",
   },
   {
     q: "What is Java?",
