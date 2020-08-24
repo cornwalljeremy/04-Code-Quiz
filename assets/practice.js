@@ -37,7 +37,20 @@ function countdown() {
       }
     }, 1000);
   }
+var SubmitScoreEl = document.getElementById('submitScore')
+var scoreEl = document.getElementById('score')
+var forDivEl = document.getElementById('form')
 
+function enterScore({
+  var scoreInitials = document.getElementById('name').nodeValue.trim();
+  var localStorageData = JSON.parse(localStorage.getItem('highScores')) || [];
+  var scoreDataObj = {
+    initials: scoreInitials,
+    quizScore: scoreInitials,
+  }
+  localStorage.push(scoreDataObj);
+  localStorage.setItem('highScores',JSON.stringify(scoreDataObj));
+})
 // function quiz(){
 //     for(i = 0; i < questions.length; i++)
 //   var A = window.prompt(questions[i].q)
@@ -125,3 +138,20 @@ function countdown() {
 
 
 startBtn.onclick = countdown;
+
+
+public class Question {
+  string prompt;
+  string answer;
+
+  public Question(string prompt, String answer){
+  this.prompt = prompt;
+  this.answer = answer;
+}}
+
+question[] questions = {
+  new question(q1, 'a'),
+  new question(q2, 'b');
+}
+
+

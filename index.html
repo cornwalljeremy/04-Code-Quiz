@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04-Quiz-Code</title>
-    <script
+    <title>04-Quiz-Code</title> 
+    <!-- <script
       src="https://kit.fontawesome.com/e24e492c98.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <link rel="stylesheet" href="./assets/style.css"
   </head>
 
@@ -16,19 +16,24 @@
       <div class="format">
         <h1>Coding Quiz</h1>
       </div>
-      <div class="counter-message">
+      <div class="ready">
+        <h1 class="welcome">Are you ready?</h1>
+      </div>
+      <div class="btn">
+        <button id="start">Start</button>
+      </div>
+      <div class="timer">
         <h2 id="countdown"></h2>
         <p id="main"></p>
+        <div class="counter-message">
+          <h2 id="countdown"></h2>
+          <p id="main"></p>
+        </div>
+        <div id="start-screen" class="hide">Start Here!!</div>
       </div>
-      <div class="name-input">
-        <i class="far fa-smile"></i>
-        <input type="text" placeholder="name" required />
-        <i class="fas fa-arrow-right" id="start"></i>
-      </div>
-      <!-- add quiz here -->
-      <div class="instructions">
+      <div class="instructions hide">
         <p>
-          Enter your name and press the arrow. The quiz and timer will start!
+          Click start and the quiz and timer will begin!
         </p>
       </div>
     </div>
