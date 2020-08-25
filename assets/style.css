@@ -37,7 +37,9 @@ button {
 #question-list button {
   background-color: rgb(24, 24, 152);
   color: white;
-
+  display: flex;
+  flex-direction: column;
+ margin-left: 100px;
   height: 50px;
   width: 300px;
   justify-content: space-between;
