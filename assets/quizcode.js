@@ -8,7 +8,7 @@ let hiddenItems = document.getElementsByClassName("hide");
 // let questionList = document.getElementById("question-list");
 let rightAnswer = 0;
 let questionIndex = 0
-let timeLeft = 3;
+let timeLeft = 100;
 let timeInterval;
 
 function countdown() {
@@ -76,6 +76,9 @@ function quiz() {
 
   }
 
+}
+
+
 
 let questionsArray = [
   {
@@ -95,12 +98,12 @@ let questionsArray = [
   },
   {
     q: "What does DOM stand for?",
-    answers: 
-     [  "Do or make",
+    answers: [
+       "Do or make",
        "do over man",
        "Document object model",
-       "dead on marriage..?", ],
-    
+       "dead on marriage..?",
+],
     correctAnswer: "2",
   },
   {
@@ -110,7 +113,7 @@ let questionsArray = [
        "puppies",
        "'42'",
        "all the above",
-  ],
+],
     correctAnswer: "3",
   },
   {
@@ -120,22 +123,10 @@ let questionsArray = [
        "give the cheat codes to your fav video game",
        "writes a message in the console for debugging and checking work",
        "alien self-destruct button",
-    ],
+],
     correctAnswer: "2",
   },
 ];
-// for(let i=0; i < questionsArray[count].length; i++);
 
-// function nextSlide(parent, nextForm) {
-//   parent.classList.add("hide");
-//   parent.classList.remove("active");
-//   parent.classList.add("active");
-// }
-// function error(color) {
-//   document.body.style.backgroundColor = color;
-// }
-// function validateQuizStart(quiz) {
-//     let questionArray
-// }
 
 startBtn.onclick = countdown;
