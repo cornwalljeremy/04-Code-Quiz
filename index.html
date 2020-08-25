@@ -4,41 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>04-Quiz-Code</title>
-    <!-- <script
-      src="https://kit.fontawesome.com/e24e492c98.js"
-      crossorigin="anonymous"
-    ></script> -->
+
     <link rel="stylesheet" href="./assets/style.css"
   </head>
 
   <body>
-    <div class="container">
-      <div class="format">
-        <h1>Coding Quiz</h1>
+    <section id="main">
+      <div id="intro">
+        <h1 id="welcome">Coding Quiz</h1>
       </div>
-      <div class="ready">
-        <h1 id="welcome" class="show"></h1>
-      </div>
-      <div class="btn">
-        <button id="start">Start</button>
-      </div>
-      <div class="timer">
+      <div id="timer" class="show">
         <h2 id="countdown"></h2>
         <p id="main"></p>
-        <div class="counter-message">
-          <h2 id="countdown"></h2>
-          <p id="main"></p>
-        </div>
-        <div id="start-screen" class="hide"></div>
+        <div class="counter-message"></div>
       </div>
-      <div id="questions-start" class="hide"></div>
+      
+
       <div id="instructions">
-        <p>
-          Click start and the quiz and timer will begin!
-        </p>
+        <button id="btn" class="start">Let's Go!</button>
+        <p>Click start and the quiz and timer will begin!</p>
       </div>
-    </div>
-    <div id="question-list"></div>
+      <div id="quiz-start" class="quiz"></div>
+    </section>
 
     <script src="assets/quizcode.js"></script>
   </body>
