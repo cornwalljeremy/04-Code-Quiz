@@ -1,15 +1,16 @@
-let timerEl = document.getElementById("countdown");
-let mainEl = document.getElementById("main");
-let startBtn = document.getElementById("btn", "quiz-start");
-// let startScreenEl = document.getElementById("start");
-let quizStartEl = document.getElementById("quiz-start");
-let startInstructionsEl = document.getElementById("instructions");
-let hiddenItems = document.getElementsByClassName("hide");
-// let questionList = document.getElementById("question-list");
-let rightAnswer = 0;
-let questionIndex = 0
-let timeLeft = 100;
-let timeInterval;
+var timerEl = document.getElementById("countdown");
+var mainEl = document.getElementById("main");
+var startBtn = document.getElementById("btn", "quiz-start");
+// var startScreenEl = document.getElementById("start");
+var quizStartEl = document.getElementById("quiz-start");
+var startInstructionsEl = document.getElementById("instructions");
+var hiddenItems = document.getElementsByClassName("hide");
+// var questionList = document.getElementById("question-list");
+var rightAnswer = 0;
+var questionIndex = 0
+var timeLeft = 100;
+var timeInterval;
+var myTextEl = document.getElementById("myText");
 
 function countdown() {
   
@@ -31,8 +32,9 @@ function countdown() {
 
 function displayMessage() {
   quizStartEl.innerHTML = ""
-  quizStartEl.textContent = "Your Score " + rightAnswer
 
+  quizStartEl.textContent = (myTextEl.value + " Your Score is " + rightAnswer);
+  // quizStartEl.textContent = myTextEl.value
 }
 
 function quiz() {
@@ -77,10 +79,7 @@ function quiz() {
   }
 
 }
-
-
-
-let questionsArray = [
+var questionsArray = [
   {
     q: "How long have we been in this class?",
     answers: ["I don't remember!", "four weeks", "eternity", "yes"],
